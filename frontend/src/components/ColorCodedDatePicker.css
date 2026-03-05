@@ -1,0 +1,200 @@
+/* Color-coded date picker styles */
+.color-coded-datepicker-wrapper {
+  position: relative;
+}
+
+.color-coded-calendar {
+  font-family: inherit;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Available dates - Green */
+.react-datepicker__day.date-available {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  font-weight: 600;
+  border: 1px solid #10b981;
+}
+
+.react-datepicker__day.date-available:hover {
+  background-color: #a7f3d0 !important;
+  color: #064e3b !important;
+}
+
+/* Holiday/Unavailable dates - Red */
+.react-datepicker__day.date-holiday {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+  font-weight: 600;
+  border: 1px solid #ef4444;
+  text-decoration: line-through;
+  cursor: not-allowed !important;
+}
+
+.react-datepicker__day.date-holiday:hover {
+  background-color: #fecaca !important;
+  color: #7f1d1d !important;
+}
+
+/* Not Available dates - Red (same as holiday) */
+.react-datepicker__day.date-not-available {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+  font-weight: 600;
+  border: 1px solid #ef4444;
+  text-decoration: line-through;
+  cursor: not-allowed !important;
+}
+
+.react-datepicker__day.date-not-available:hover {
+  background-color: #fecaca !important;
+  color: #7f1d1d !important;
+}
+
+/* OB Available dates - Blue */
+.react-datepicker__day.date-ob-available {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  font-weight: 600;
+  border: 1px solid #3b82f6;
+}
+
+.react-datepicker__day.date-ob-available:hover {
+  background-color: #bfdbfe !important;
+  color: #1e3a8a !important;
+}
+
+/* Full dates - Red background */
+.react-datepicker__day.date-full {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+  font-weight: 600;
+  border: 1px solid #ef4444;
+  cursor: not-allowed !important;
+}
+
+.react-datepicker__day.date-full:hover {
+  background-color: #fecaca !important;
+}
+
+/* No schedule dates - Default/Gray */
+.react-datepicker__day.date-no-schedule {
+  background-color: #f9fafb;
+  color: #6b7280;
+}
+
+.react-datepicker__day.date-no-schedule:hover {
+  background-color: #f3f4f6;
+}
+
+/* Selected date */
+.react-datepicker__day--selected {
+  background-color: #3b82f6 !important;
+  color: white !important;
+  font-weight: bold;
+  border: 2px solid #2563eb !important;
+}
+
+/* Today */
+.react-datepicker__day--today {
+  font-weight: bold;
+  border: 2px solid #fbbf24;
+}
+
+/* Disabled dates (past dates) */
+.react-datepicker__day--disabled {
+  color: #d1d5db !important;
+  cursor: not-allowed !important;
+  text-decoration: line-through;
+  background-color: #f3f4f6 !important;
+}
+
+/* Header styling */
+.react-datepicker__header {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  padding-top: 0.75rem;
+}
+
+.react-datepicker__current-month {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.react-datepicker__day-name {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* Navigation arrows */
+.react-datepicker__navigation {
+  top: 0.75rem;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: #6b7280;
+}
+
+.react-datepicker__navigation:hover *::before {
+  border-color: #111827;
+}
+
+/* Input styling */
+.color-coded-datepicker-wrapper input {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.color-coded-datepicker-wrapper input:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #3b82f6;
+}
+
+/* Day cell badge overlay */
+.day-content {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.day-badge {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  font-size: 10px;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 6px;
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.day-badge-full {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+.day-badge-holiday {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  color: #991b1b;
+  font-weight: 700;
+}
+
+/* OB Available badge - Blue */
+.day-badge-ob {
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  font-size: 8px;
+  padding: 1px 3px;
+}

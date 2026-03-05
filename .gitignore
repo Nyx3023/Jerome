@@ -1,0 +1,10 @@
+# node_modules - too large, groupmates run npm install themselves
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# .env - contains database password, share separately via chat
+.env
+backend/.env
+frontend/.env
+frontend/.env.local

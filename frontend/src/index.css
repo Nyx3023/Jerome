@@ -1,0 +1,51 @@
+/* Import custom styles */
+@import './styles/global.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* Custom base styles */
+@layer components {
+  .page-container {
+    @apply min-h-screen flex flex-col;
+  }
+
+  .main-content {
+    @apply flex-grow container-custom py-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-400;
+  }
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
