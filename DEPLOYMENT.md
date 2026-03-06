@@ -100,7 +100,7 @@ Or use **DBeaver** / **MySQL Workbench** to connect o Aiven and import the SQL f
 
 | Key | Value |
 |---|---|
-| `VITE_API_URL` | `https://clinic-backend-xxxx.onrender.com` (your Render URL) |
+| `VITE_API_URL` | `https://clinic-backend-hisl.onrender.com/` (your Render URL) |
 
 6. **IMPORTANT**: Edit `frontend/vercel.json` and replace `YOUR_RENDER_BACKEND_URL` with your actual Render domain (e.g., `clinic-backend-xxxx`)
 
