@@ -2,11 +2,11 @@
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "https://clinic-backend-hisl.onrender.com/api/:path*"
+            "destination": "https://clinic-backend-d2wz.onrender.com/api/:path*"
         },
         {
             "source": "/uploads/:path*",
-            "destination": "https://clinic-backend-hisl.onrender.com/uploads/:path*"
+            "destination": "https://clinic-backend-d2wz.onrender.com/uploads/:path*"
         }
     ],
     "routes": [
