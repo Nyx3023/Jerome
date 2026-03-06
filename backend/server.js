@@ -37,7 +37,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 app.use('/uploads/lab-results', express.static(path.join(__dirname, 'uploads', 'lab-results')));
 
-// Use routes
+// Health check endpoint
+app.get('/', (req, res) => {
+  const db = require('./config/db');
+  db.query('SELECT 1', (err) => {
+    res.json({
+      status: err ? 'error' : 'ok',
+      db_connected: !err,
+      db_error: err ? err.message : null,
+      env_check: {
+        DB_HOST: process.env.DB_HOST ? 'set' : 'MISSING',
+        DB_PORT: process.env.DB_PORT ? 'set' : 'MISSING',
+        DB_USER: process.env.DB_USER ? 'set' : 'MISSING',
+        DB_PASS: process.env.DB_PASS ? 'set' : 'MISSING',
+        DB_NAME: process.env.DB_NAME ? 'set' : 'MISSING',
+        DB_SSL: process.env.DB_SSL || 'MISSING',
+        FRONTEND_URL: process.env.FRONTEND_URL || 'MISSING',
+        JWT_SECRET: process.env.JWT_SECRET ? 'set' : 'MISSING'
+      }
+    });
+  });
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/doctors", doctorRoutes);
