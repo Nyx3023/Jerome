@@ -33,7 +33,7 @@
 cmd /c "mysql -h YOUR_AIVEN_HOST -P YOUR_PORT -u avnadmin -p --ssl-ca=ca.pem appointment_system < ""appointment_system (1).sql"""
 ```
 
-Or use **DBeaver** / **MySQL Workbench** to connect to Aiven and import the SQL file (recommended for beginners).
+Or use **DBeaver** / **MySQL Workbench** to connect o Aiven and import the SQL file (recommended for beginners).t
 
 ---
 
