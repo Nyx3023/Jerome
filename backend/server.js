@@ -16,20 +16,18 @@ const clinicRoutes = require("./routes/clinicRoutes");
 
 const app = express();
 
-// Middleware
-const allowedOrigins = process.env.FRONTEND_URL
-  ? process.env.FRONTEND_URL.split(',').map(s => s.trim())
-  : [];
-app.use(cors({
-  origin: allowedOrigins.length > 0
-    ? (origin, cb) => {
-      // Allow requests with no origin (mobile apps, curl, etc.)
-      if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
-      cb(null, true); // Allow all in case of misconfigured origins
-    }
-    : true, // Allow all origins if FRONTEND_URL not set (local dev)
-  credentials: true
-}));
+// Middleware - CORS
+const corsOptions = {
+  origin: process.env.FRONTEND_URL
+    ? process.env.FRONTEND_URL.split(',').map(s => s.trim())
+    : true,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+};
+app.use(cors(corsOptions));
+// Explicitly handle preflight for all routes
+app.options('*', cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
